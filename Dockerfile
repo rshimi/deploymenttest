@@ -4,7 +4,7 @@ RUN echo "deb http://archive.ubuntu.ubuntu.com/ubuntu trusty main universe" > /e
 
 RUN apt-get -y update
 
-RUN DEBIAN_FRONTEND=noninterctive apt-get install -y -q python-software-properties software-properties-common
+RUN DEBIAN_FRONTEND=noninteractive apt-get install -y -q python-software-properties software-properties-common
 
 ENV JAVA_VER 8
 ENV JAVA_HOME /usr/lib/jvm/java-8-oracle
