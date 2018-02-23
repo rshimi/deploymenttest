@@ -2,7 +2,7 @@ FROM phusion/baseimage:0.9.17
 
 RUN echo "deb http://archive.ubuntu.ubuntu.com/ubuntu trusty main universe" > /etc/apt/sources.list
 
-RUN apt_get -y update
+RUN apt-get -y update
 
 RUN DEBIAN_FRONTEND=noninterctive apt-get install -y -q python-software-properties software-properties-common
 
@@ -22,6 +22,6 @@ RUN update-java-alternatives -s java-8-oracle
 
 RUN echo "export JAVA_HOME=/usr/lib/jvm/java-8-oracle" >> ~/.bashrc
 
-RUN apt-get clean && rm -rf /var/lib/apt/lists/* /tmp/ /var/tmp/*
+RUN apt-get clean && rm -rf /var/lib/apt/lists/* /tmp/* /var/tmp/*
 
 CMD ["/sbin/my_init"]
