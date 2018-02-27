@@ -2,9 +2,9 @@ FROM phusion/baseimage:0.9.17
 
 RUN echo "deb http://archive.ubuntu.ubuntu.com/ubuntu trusty main universe" > /etc/apt/sources.list
 
-RUN apt-get -y update
+RUN apt-get install -y -q software-properties-common
 
-RUN DEBIAN_FRONTEND=noninteractive apt-get install -y -q python-software-properties software-properties-common
+RUN apt-get -y update
 
 ENV JAVA_VER 8
 ENV JAVA_HOME /usr/lib/jvm/java-8-oracle
