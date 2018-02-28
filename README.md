@@ -100,12 +100,28 @@ Then to deploy any changes made, run:
 $ eb deploy
 ```
 
-and visit the URL mentioned previously. and you should see:
+.....and visit the URL mentioned previously. and you should see:
 ```json
 {
   "message": "HELLO WORLD"
 }
+```
 
+Or use curl: 
+```
+curl -X GET -i http://helloworlddockeraws-dev.us-west-2.elasticbeanstalk.com/hello-world
+```
+and you should see:
+```
+HTTP/1.1 200
+Content-Type: application/json;charset=UTF-8
+Date: Wed, 28 Feb 2018 09:43:43 GMT
+Server: nginx/1.12.1
+X-Application-Context: application:5000
+transfer-encoding: chunked
+Connection: keep-alive
+
+{"Message":"HELLO WORLD"}
 ```
 ### Still to do:
-These commands need to be executed from jenkins which is to be the next step.  
+This deployment needs to be executed via jenkins which is to be the next step.  
